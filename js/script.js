@@ -278,3 +278,21 @@ function Edit(id){
     localStorage.setItem('heroes', JSON.stringify(filtered))
     window.location.reload()
 }
+const signout = document.querySelector('.signout')
+
+
+window.addEventListener('load' , () =>{
+    if(localStorage.getItem('isAuth') === 'false'){
+        window.open('auth.html' , '_self')
+    }else{
+        return
+    }
+})
+
+
+signout.addEventListener('click' , e =>{
+    e.preventDefault()
+
+    localStorage.setItem('isAuth' , 'false')
+    window.location.reload()
+})
